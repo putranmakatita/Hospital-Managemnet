@@ -18,17 +18,17 @@ public class AppointmentsPage extends javax.swing.JFrame {
 
     public AppointmentsPage() {
 
-initComponents();
-        
-Object[][] formStructure = {
-    {"Id", "IntegerField", null, null},
-    {"Patient_Name", "TextField", null, null},
-    {"Doctor_Name", "TextField", null, null},
-    {"Appointment_Date", "DateField", null, null},
-    {"Appointment_Time", "TimeField", null, null},
-    {"Reason", "TextField", null, null},
-    {"Status", "ComboBox", new String[]{"Scheduled", "Completed", "Cancelled", "No Show"}, null}
-};
+        initComponents();
+                
+        Object[][] formStructure = {
+            {"Id", "IntegerField", null, null},
+            {"Patient_Name", "TextField", null, null},
+            {"Doctor_Name", "TextField", null, null},
+            {"Appointment_Date", "DateField", null, null},
+            {"Appointment_Time", "TimeField", null, null},
+            {"Reason", "TextField", null, null},
+            {"Status", "ComboBox", new String[]{"Scheduled", "Completed", "Cancelled", "No Show"}, null}
+        };
 
         PageHeader pageHeader = new PageHeader("Appointment", formStructure, "/reports/AppointmentsReport.jrxml");
     

@@ -36,11 +36,11 @@ imageBox.addMouseListener(new MouseAdapter() {
                 DoctorsPage doctorPage = new DoctorsPage();
                 doctorPage.setVisible(true);
                 break;
-            case "Pateints":
+            case "Patients":
                 PatientsPage patientPage = new PatientsPage();
                 patientPage.setVisible(true);
                 break;
-            case "Appointment":
+            case "Appointments":
                 AppointmentsPage appointmentPage = new AppointmentsPage();
                 appointmentPage.setVisible(true);
                 break;
