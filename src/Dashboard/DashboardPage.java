@@ -30,8 +30,8 @@ public class DashboardPage extends javax.swing.JFrame {
         JPanel gridLayout = new JPanel(new GridLayout(2, 3, 10, 10));
 
         gridLayout.add(new GridBox("/Images/doctor.png", "Doctors"));
-        gridLayout.add(new GridBox("/Images/patient.png", "Pateints"));
-        gridLayout.add(new GridBox("/Images/appointment.png", "Appointment"));
+        gridLayout.add(new GridBox("/Images/patient.png", "Patients"));
+        gridLayout.add(new GridBox("/Images/appointment.png", "Appointments"));
         gridLayout.add(new GridBox("/Images/medicine.png", "Medicines"));
         
         getContentPane().add(gridLayout, java.awt.BorderLayout.CENTER);

@@ -179,11 +179,20 @@ public class PageHeader extends javax.swing.JPanel {
 
     private void reportBtnActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-            InputStream reportStream =
-                    getClass().getResourceAsStream("/reports/PatientsReport.jrxml");
+            // 1. Get the path, but remove the leading slash if it exists 
+            // (ClassLoader expects paths without the leading slash)
+            String path = this.reportFile;
+            if (path.startsWith("/")) {
+                path = path.substring(1); 
+            }
+
+            // 2. Use the Context ClassLoader
+            java.io.InputStream reportStream = Thread.currentThread()
+                    .getContextClassLoader()
+                    .getResourceAsStream(path);
 
             if (reportStream == null) {
-                throw new RuntimeException("Report file not found in resources!");
+                throw new RuntimeException("Still cannot find file at path: " + path);
             }
 
             net.sf.jasperreports.engine.JasperReport report =

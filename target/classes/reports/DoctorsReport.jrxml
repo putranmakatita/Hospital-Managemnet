@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="DoctorsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    
+    <queryString language="SQL">
+        <![CDATA[SELECT Id, Name, Specialty, Phone_Number, Email, Gender, Years_of_Experience, Status, Start_Time, End_Time FROM doctors]]>
+    </queryString>
+    
+    <field name="Id" class="java.lang.Integer"/>
+    <field name="Name" class="java.lang.String"/>
+    <field name="Specialty" class="java.lang.String"/>
+    <field name="Phone_Number" class="java.lang.String"/>
+    <field name="Email" class="java.lang.String"/>
+    <field name="Gender" class="java.lang.String"/>
+    <field name="Years_of_Experience" class="java.lang.Integer"/>
+    <field name="Status" class="java.lang.String"/>
+    <field name="Start_Time" class="java.lang.String"/>
+    <field name="End_Time" class="java.lang.String"/>
+    
+    <columnHeader>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="40" height="20"/><text><![CDATA[ID]]></text></staticText>
+            <staticText><reportElement x="40" y="0" width="100" height="20"/><text><![CDATA[Name]]></text></staticText>
+            <staticText><reportElement x="140" y="0" width="90" height="20"/><text><![CDATA[Specialty]]></text></staticText>
+            <staticText><reportElement x="230" y="0" width="90" height="20"/><text><![CDATA[Phone]]></text></staticText>
+            <staticText><reportElement x="320" y="0" width="100" height="20"/><text><![CDATA[Email]]></text></staticText>
+            <staticText><reportElement x="420" y="0" width="60" height="20"/><text><![CDATA[Gender]]></text></staticText>
+            <staticText><reportElement x="480" y="0" width="50" height="20"/><text><![CDATA[Years Exp]]></text></staticText>
+            <staticText><reportElement x="530" y="0" width="70" height="20"/><text><![CDATA[Status]]></text></staticText>
+            <staticText><reportElement x="600" y="0" width="100" height="20"/><text><![CDATA[Start Time]]></text></staticText>
+            <staticText><reportElement x="700" y="0" width="102" height="20"/><text><![CDATA[End Time]]></text></staticText>
+        </band>
+    </columnHeader>
+    
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="40" height="20"/><textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression></textField>
+            <textField><reportElement x="40" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression></textField>
+            <textField><reportElement x="140" y="0" width="90" height="20"/><textFieldExpression><![CDATA[$F{Specialty}]]></textFieldExpression></textField>
+            <textField><reportElement x="230" y="0" width="90" height="20"/><textFieldExpression><![CDATA[$F{Phone_Number}]]></textFieldExpression></textField>
+            <textField><reportElement x="320" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression></textField>
+            <textField><reportElement x="420" y="0" width="60" height="20"/><textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression></textField>
+            <textField><reportElement x="480" y="0" width="50" height="20"/><textFieldExpression><![CDATA[$F{Years_of_Experience}]]></textFieldExpression></textField>
+            <textField><reportElement x="530" y="0" width="70" height="20"/><textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression></textField>
+            <textField><reportElement x="600" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Start_Time}]]></textFieldExpression></textField>
+            <textField><reportElement x="700" y="0" width="102" height="20"/><textFieldExpression><![CDATA[$F{End_Time}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>

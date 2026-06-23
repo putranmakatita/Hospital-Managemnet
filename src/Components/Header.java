@@ -7,6 +7,11 @@ package Components;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import java.awt.Window;
 import config.DesignConstants;
 
 public class Header extends javax.swing.JPanel {
@@ -43,8 +48,42 @@ public class Header extends javax.swing.JPanel {
         gridBagConstraints.anchor = GridBagConstraints.EAST;
         gridBagConstraints.insets = new Insets(10, 10, 10, 40);
         add(LogoutBtn, gridBagConstraints);
+
+        // >>> FIX: Attach the mouse click listener directly to the Logout JLabel <<<
+        LogoutBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                handleLogout();
+            }
+        });
     }
 
+   /**
+     * Handles the logout logic safely with a confirmation dialog box
+     * and redirects cleanly to the Auth.LoginPage.
+     */
+    private void handleLogout() {
+        int confirm = JOptionPane.showConfirmDialog(
+            this, 
+            "Are you sure you want to log out?", 
+            "Logout Confirmation", 
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            // 1. Find the parent Frame holding this header and close it safely
+            java.awt.Window currentWindow = SwingUtilities.getWindowAncestor(this);
+            if (currentWindow != null) {
+                currentWindow.dispose();
+            }
+
+            // 2. Open the login window using your correct package route
+            java.awt.EventQueue.invokeLater(() -> {
+                new Auth.LoginPage().setVisible(true);
+            });
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

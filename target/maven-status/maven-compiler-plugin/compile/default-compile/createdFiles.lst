@@ -43,6 +43,7 @@ Modules\PatientsPage.class
 common\commonMethods.class
 Components\GridBox.class
 Auth\LoginPage$2.class
+Components\Header$1.class
 Auth\LoginPage.class
 Auth\RegisterPage$8.class
 Modules\PatientsPage$1.class

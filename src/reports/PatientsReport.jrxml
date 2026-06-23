@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="PatientsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    
+    <queryString language="SQL">
+        <![CDATA[SELECT Id, Name, Date_of_Birth, Gender, Phone_Number, Email, Address, Diagnosis, Treatment_Status, Status FROM patients]]>
+    </queryString>
+    
+    <field name="Id" class="java.lang.Integer"/>
+    <field name="Name" class="java.lang.String"/>
+    <field name="Date_of_Birth" class="java.lang.String"/>
+    <field name="Gender" class="java.lang.String"/>
+    <field name="Phone_Number" class="java.lang.String"/>
+    <field name="Email" class="java.lang.String"/>
+    <field name="Address" class="java.lang.String"/>
+    <field name="Diagnosis" class="java.lang.String"/>
+    <field name="Treatment_Status" class="java.lang.String"/>
+    <field name="Status" class="java.lang.String"/>
+    
+    <columnHeader>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="40" height="20"/><text><![CDATA[ID]]></text></staticText>
+            <staticText><reportElement x="40" y="0" width="100" height="20"/><text><![CDATA[Name]]></text></staticText>
+            <staticText><reportElement x="140" y="0" width="80" height="20"/><text><![CDATA[DOB]]></text></staticText>
+            <staticText><reportElement x="220" y="0" width="60" height="20"/><text><![CDATA[Gender]]></text></staticText>
+            <staticText><reportElement x="280" y="0" width="90" height="20"/><text><![CDATA[Phone]]></text></staticText>
+            <staticText><reportElement x="370" y="0" width="100" height="20"/><text><![CDATA[Email]]></text></staticText>
+            <staticText><reportElement x="470" y="0" width="100" height="20"/><text><![CDATA[Address]]></text></staticText>
+            <staticText><reportElement x="570" y="0" width="90" height="20"/><text><![CDATA[Diagnosis]]></text></staticText>
+            <staticText><reportElement x="660" y="0" width="70" height="20"/><text><![CDATA[Treat. Stat]]></text></staticText>
+            <staticText><reportElement x="730" y="0" width="72" height="20"/><text><![CDATA[Status]]></text></staticText>
+        </band>
+    </columnHeader>
+    
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="40" height="20"/><textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression></textField>
+            <textField><reportElement x="40" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression></textField>
+            <textField><reportElement x="140" y="0" width="80" height="20"/><textFieldExpression><![CDATA[$F{Date_of_Birth}]]></textFieldExpression></textField>
+            <textField><reportElement x="220" y="0" width="60" height="20"/><textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression></textField>
+            <textField><reportElement x="280" y="0" width="90" height="20"/><textFieldExpression><![CDATA[$F{Phone_Number}]]></textFieldExpression></textField>
+            <textField><reportElement x="370" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression></textField>
+            <textField><reportElement x="470" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression></textField>
+            <textField><reportElement x="570" y="0" width="90" height="20"/><textFieldExpression><![CDATA[$F{Diagnosis}]]></textFieldExpression></textField>
+            <textField><reportElement x="660" y="0" width="70" height="20"/><textFieldExpression><![CDATA[$F{Treatment_Status}]]></textFieldExpression></textField>
+            <textField><reportElement x="730" y="0" width="72" height="20"/><textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>

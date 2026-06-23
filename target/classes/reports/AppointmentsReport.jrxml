@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="AppointmentsReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    
+    <queryString language="SQL">
+        <![CDATA[SELECT Id, Patient_Name, Doctor_Name, Appointment_Date, Appointment_Time, Reason, Status FROM appointments]]>
+    </queryString>
+    
+    <field name="Id" class="java.lang.Integer"/>
+    <field name="Patient_Name" class="java.lang.String"/>
+    <field name="Doctor_Name" class="java.lang.String"/>
+    <field name="Appointment_Date" class="java.lang.String"/>
+    <field name="Appointment_Time" class="java.lang.String"/>
+    <field name="Reason" class="java.lang.String"/>
+    <field name="Status" class="java.lang.String"/>
+    
+    <columnHeader>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="50" height="20"/><text><![CDATA[ID]]></text></staticText>
+            <staticText><reportElement x="50" y="0" width="130" height="20"/><text><![CDATA[Patient Name]]></text></staticText>
+            <staticText><reportElement x="180" y="0" width="130" height="20"/><text><![CDATA[Doctor Name]]></text></staticText>
+            <staticText><reportElement x="310" y="0" width="100" height="20"/><text><![CDATA[Date]]></text></staticText>
+            <staticText><reportElement x="410" y="0" width="100" height="20"/><text><![CDATA[Time]]></text></staticText>
+            <staticText><reportElement x="510" y="0" width="162" height="20"/><text><![CDATA[Reason]]></text></staticText>
+            <staticText><reportElement x="672" y="0" width="130" height="20"/><text><![CDATA[Status]]></text></staticText>
+        </band>
+    </columnHeader>
+    
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="50" height="20"/><textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression></textField>
+            <textField><reportElement x="50" y="0" width="130" height="20"/><textFieldExpression><![CDATA[$F{Patient_Name}]]></textFieldExpression></textField>
+            <textField><reportElement x="180" y="0" width="130" height="20"/><textFieldExpression><![CDATA[$F{Doctor_Name}]]></textFieldExpression></textField>
+            <textField><reportElement x="310" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Appointment_Date}]]></textFieldExpression></textField>
+            <textField><reportElement x="410" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Appointment_Time}]]></textFieldExpression></textField>
+            <textField><reportElement x="510" y="0" width="162" height="20"/><textFieldExpression><![CDATA[$F{Reason}]]></textFieldExpression></textField>
+            <textField><reportElement x="672" y="0" width="130" height="20"/><textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>

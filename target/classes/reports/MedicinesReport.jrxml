@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="MedicinesReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    
+    <queryString language="SQL">
+        <![CDATA[SELECT Id, Name, Manufacturer, Expiration_Date, Dosage, Stock, Status FROM medicines]]>
+    </queryString>
+    
+    <field name="Id" class="java.lang.Integer"/>
+    <field name="Name" class="java.lang.String"/>
+    <field name="Manufacturer" class="java.lang.String"/>
+    <field name="Expiration_Date" class="java.lang.String"/>
+    <field name="Dosage" class="java.lang.String"/>
+    <field name="Stock" class="java.lang.Integer"/>
+    <field name="Status" class="java.lang.String"/>
+    
+    <columnHeader>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="50" height="20"/><text><![CDATA[ID]]></text></staticText>
+            <staticText><reportElement x="50" y="0" width="150" height="20"/><text><![CDATA[Medicine Name]]></text></staticText>
+            <staticText><reportElement x="200" y="0" width="150" height="20"/><text><![CDATA[Manufacturer]]></text></staticText>
+            <staticText><reportElement x="350" y="0" width="100" height="20"/><text><![CDATA[Exp. Date]]></text></staticText>
+            <staticText><reportElement x="450" y="0" width="100" height="20"/><text><![CDATA[Dosage]]></text></staticText>
+            <staticText><reportElement x="550" y="0" width="70" height="20"/><text><![CDATA[Stock]]></text></staticText>
+            <staticText><reportElement x="620" y="0" width="182" height="20"/><text><![CDATA[Status]]></text></staticText>
+        </band>
+    </columnHeader>
+    
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="50" height="20"/><textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression></textField>
+            <textField><reportElement x="50" y="0" width="150" height="20"/><textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression></textField>
+            <textField><reportElement x="200" y="0" width="150" height="20"/><textFieldExpression><![CDATA[$F{Manufacturer}]]></textFieldExpression></textField>
+            <textField><reportElement x="350" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Expiration_Date}]]></textFieldExpression></textField>
+            <textField><reportElement x="450" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Dosage}]]></textFieldExpression></textField>
+            <textField><reportElement x="550" y="0" width="70" height="20"/><textFieldExpression><![CDATA[$F{Stock}]]></textFieldExpression></textField>
+            <textField><reportElement x="620" y="0" width="182" height="20"/><textFieldExpression><![CDATA[$F{Status}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport>
